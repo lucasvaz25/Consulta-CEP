@@ -1,5 +1,7 @@
 program ProjectConsultaCEP;
 
+{$R *.dres}
+
 uses
   Vcl.Forms,
   ConsultaCEP in 'ConsultaCEP.pas' {Form1};

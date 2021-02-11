@@ -102,6 +102,14 @@
             <Form>Form1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <RcItem Include="icon\cancelar.bmp">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>cancelar</ResourceId>
+        </RcItem>
+        <RcItem Include="icon\marca-de-verificacao.bmp">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>confirmar</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -127,6 +135,18 @@
                 <DeployFile LocalName="Win32\Debug\ProjectConsultaCEP.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ProjectConsultaCEP.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="icon\cancelar.bmp" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="icon\marca-de-verificacao.bmp" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

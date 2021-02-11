@@ -77,9 +77,9 @@ var
 begin
   if Length( EdCEP.Text ) <> 8 then
   begin
-    ShowMessage( 'CEP incorreto' );
+    MessageDlg( 'CEP incorreto', MtInformation, [ MbOK ], 0 );
     LimparObj( True );
-    Image1.Picture.LoadFromFile( 'C:\Users\Vaz\OneDrive\Documentos\Testes\Consulta CEP\icon\cancelar.bmp' );
+    Image1.Picture.Bitmap.LoadFromResourceName( HInstance, 'cancelar' );
     EdCEP.SetFocus;
     Exit;
   end;
@@ -91,15 +91,19 @@ begin
     if LJsonObj.Get( 'erro' ) = nil then
     begin
       CarregaCep( LJsonObj );
-      Image1.Picture.LoadFromFile( 'C:\Users\Vaz\OneDrive\Documentos\Testes\Consulta CEP\icon\marca-de-verificacao.bmp' );
+      Image1.Picture.Bitmap.LoadFromResourceName( HInstance, 'confirmar' );
     end
     else
     begin
-      ShowMessage( 'CEP inválido ou não encontrado' );
-      LimparObj( True );
-      Image1.Picture.LoadFromFile( 'C:\Users\Vaz\OneDrive\Documentos\Testes\Consulta CEP\icon\cancelar.bmp' );
-      EdCEP.SetFocus;
-      Exit;
+      if MessageDlg( 'CEP inválido ou não encontrado!' + #13 + 'Deseja continuar com este CEP?', MtInformation, [ MbYes, MbNo ], 0 ) = MrYes then
+        EdRua.SetFocus
+      else
+      begin
+        LimparObj( True );
+        Image1.Picture.Bitmap.LoadFromResourceName( HInstance, 'cancelar' );
+        EdCEP.SetFocus;
+        Exit;
+      end;
     end;
   end;
 end;
@@ -140,6 +144,7 @@ end;
 
 procedure TForm1.LimparObj( LimparCEP: Boolean );
 begin
+  EdCEP.Clear;
   EdRua.Clear;
   EdCidade.Clear;
   EdBairro.Clear;

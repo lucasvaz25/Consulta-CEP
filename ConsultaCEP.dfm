@@ -25,7 +25,6 @@ object Form1: TForm1
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 434
     object Label1: TLabel
       Left = 16
       Top = 6
@@ -108,8 +107,9 @@ object Form1: TForm1
       Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = []
+      MaxLength = 40
       ParentFont = False
-      TabOrder = 0
+      TabOrder = 1
       ChangeColor = 14745599
     end
     object edCEP: TVazMaskEdit
@@ -125,7 +125,7 @@ object Form1: TForm1
       Font.Style = []
       MaxLength = 10
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
       Text = ''
       OnExit = edCEPExit
       TypeMask = TtmCEP
@@ -142,6 +142,7 @@ object Form1: TForm1
       Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = []
+      MaxLength = 40
       ParentFont = False
       TabOrder = 2
       ChangeColor = 14745599
@@ -157,6 +158,7 @@ object Form1: TForm1
       Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = []
+      MaxLength = 40
       ParentFont = False
       TabOrder = 3
       ChangeColor = 14745599
@@ -172,6 +174,7 @@ object Form1: TForm1
       Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = []
+      MaxLength = 40
       ParentFont = False
       TabOrder = 4
       ChangeColor = 14745599
